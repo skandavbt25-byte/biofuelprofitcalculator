@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biofuel Production Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Biofuel Production Cost Calculator</h1>
+        
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="feedstock">Feedstock Type:</label>
+                <select id="feedstock" required>
+                    <option value="" disabled selected>Select feedstock</option>
+                    <option value="corn">Corn</option>
+                    <option value="algae">Algae</option>
+                    <option value="switchgrass">Switchgrass</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="method">Processing Method:</label>
+                <select id="method" required>
+                    <option value="" disabled selected>Select method</option>
+                    <option value="fermentation">Fermentation</option>
+                    <option value="transesterification">Transesterification</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="energy">Energy Input (kWh per gallon):</label>
+                <input type="number" id="energy" min="0" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feedstockCost">Feedstock Cost ($ per ton):</label>
+                <input type="number" id="feedstockCost" min="0" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marketPrice">Current Market Price ($ per gallon):</label>
+                <input type="number" id="marketPrice" min="0" step="any" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Currency:</label>
+                <select id="currency">
+                    <option value="USD" selected>USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate Cost</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
